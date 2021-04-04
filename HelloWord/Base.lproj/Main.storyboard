@@ -12,7 +12,7 @@
         <!--Start View Controller-->
         <scene sceneID="KQb-pd-dsq">
             <objects>
-                <viewController storyboardIdentifier="StartViewController" id="aXG-eS-Vs2" customClass="StartViewController" customModule="HelloWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" id="aXG-eS-Vs2" customClass="StartViewController" customModule="CardGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m7W-X1-ewj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,7 +90,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HelloWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CardGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,13 +107,35 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trekk nytt kort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXE-gW-cHv">
-                                <rect key="frame" x="96" y="426" width="222.5" height="44.5"/>
+                                <rect key="frame" x="96" y="425.5" width="222.5" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vil du starte på nytt?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEH-u9-2C6">
+                                <rect key="frame" x="113.5" y="508" width="187" height="212.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDQ-d6-G7H">
+                                <rect key="frame" x="0.0" y="720.5" width="414" height="141.5"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.55000000000000004" height="1"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="27"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yAZ-Ln-PST"/>
+                                    <action selector="retrieveCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ofe-x7-ux2"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="club2" translatesAutoresizingMaskIntoConstraints="NO" id="X7I-6F-cmn">
+                                <rect key="frame" x="107" y="94" width="200" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="R0I-w2-AYM"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="9ql-yf-GSR">
-                                <rect key="frame" x="145.5" y="297" width="123.5" height="29"/>
+                                <rect key="frame" x="145.5" y="339" width="123.5" height="29"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="52" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGL-oh-7hi">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="29"/>
@@ -129,21 +151,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vil du starte på nytt?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEH-u9-2C6">
-                                <rect key="frame" x="113.5" y="508" width="187" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDQ-d6-G7H">
-                                <rect key="frame" x="165" y="642" width="84" height="45"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="27"/>
-                                <state key="normal" title="Restart"/>
-                                <connections>
-                                    <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yAZ-Ln-PST"/>
-                                    <action selector="retrieveCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ofe-x7-ux2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -151,26 +158,33 @@
                             <constraint firstItem="MKM-nK-MzV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MwI-wk-z5y"/>
                             <constraint firstAttribute="trailing" secondItem="xmX-3U-58L" secondAttribute="trailing" id="NSg-BJ-1o2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xmX-3U-58L" secondAttribute="trailing" id="PRX-lU-yAI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TDQ-d6-G7H" secondAttribute="trailing" id="SFK-oM-UHS"/>
                             <constraint firstItem="xmX-3U-58L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Whr-7T-z97"/>
                             <constraint firstItem="kXE-gW-cHv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wx1-9W-D7m"/>
                             <constraint firstItem="xmX-3U-58L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XNz-4f-qVb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TDQ-d6-G7H" secondAttribute="bottom" id="XSy-7I-C4U"/>
+                            <constraint firstItem="X7I-6F-cmn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="Y41-oh-qEa"/>
                             <constraint firstItem="kXE-gW-cHv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y94-Gu-R1j"/>
                             <constraint firstItem="xmX-3U-58L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yv3-F7-xOt"/>
                             <constraint firstItem="xmX-3U-58L" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZYx-Ta-2Rj"/>
                             <constraint firstItem="TDQ-d6-G7H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bVB-Qm-7La"/>
-                            <constraint firstItem="kXE-gW-cHv" firstAttribute="top" secondItem="9ql-yf-GSR" secondAttribute="bottom" constant="100" id="cDI-UM-YuS"/>
+                            <constraint firstItem="kXE-gW-cHv" firstAttribute="top" secondItem="9ql-yf-GSR" secondAttribute="bottom" constant="57.5" id="cDI-UM-YuS"/>
                             <constraint firstItem="UEH-u9-2C6" firstAttribute="top" secondItem="kXE-gW-cHv" secondAttribute="bottom" constant="37.5" id="e5f-Og-QKu"/>
-                            <constraint firstItem="TDQ-d6-G7H" firstAttribute="top" secondItem="kXE-gW-cHv" secondAttribute="bottom" constant="250.5" id="eCU-Vw-pJn"/>
+                            <constraint firstItem="TDQ-d6-G7H" firstAttribute="top" secondItem="kXE-gW-cHv" secondAttribute="bottom" constant="250" id="eCU-Vw-pJn"/>
                             <constraint firstItem="kXE-gW-cHv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f2T-Zg-mrA"/>
                             <constraint firstItem="MKM-nK-MzV" firstAttribute="top" secondItem="kXE-gW-cHv" secondAttribute="bottom" constant="250" id="hD8-za-W0Y"/>
                             <constraint firstItem="UEH-u9-2C6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hfN-MO-CUY"/>
                             <constraint firstItem="MKM-nK-MzV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i2v-oy-9l7"/>
                             <constraint firstAttribute="trailing" secondItem="xmX-3U-58L" secondAttribute="trailing" id="q2e-qF-waX"/>
                             <constraint firstItem="xmX-3U-58L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tZt-Rf-nF6"/>
+                            <constraint firstItem="TDQ-d6-G7H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="676.5" id="vr0-BN-Mq7"/>
+                            <constraint firstItem="TDQ-d6-G7H" firstAttribute="top" secondItem="UEH-u9-2C6" secondAttribute="bottom" id="wzv-zM-3gm"/>
+                            <constraint firstItem="X7I-6F-cmn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="yCc-pw-0tM"/>
                             <constraint firstItem="9ql-yf-GSR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z1R-zC-IZO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cardImage" destination="X7I-6F-cmn" id="cUN-qA-aGi"/>
                         <outlet property="cardPickerButton" destination="MKM-nK-MzV" id="Qjj-AI-uUD"/>
                         <outlet property="cardsLeft" destination="yGL-oh-7hi" id="ZEi-k8-8Uo"/>
                         <outlet property="mainText" destination="kXE-gW-cHv" id="p5P-wW-8rK"/>
@@ -181,9 +195,38 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="DUm-7p-8X5">
+            <objects>
+                <viewController id="dFk-Q6-Qw6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RsW-h5-c7h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="oqO-uA-KrR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testing it here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6X-2K-Klh">
+                                <rect key="frame" x="153" y="438" width="108" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JKC-mM-5d3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0s-XH-uGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-761" y="-536"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="414" height="896"/>
+        <image name="club2" width="200" height="250"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

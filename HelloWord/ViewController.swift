@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     //var exercises: StartViewController = StartViewController()
     
     var allCards = [String]()
-    let num: [Int] = Array(0...12)
+    let num: [Int] = Array(1...13)
     let cardType: [String] = ["Clubs", "Dimonds", "Hearts", "Spades"]
     
     @IBOutlet weak var cardsLeft: UILabel!
@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var restartText: UILabel!
     @IBOutlet weak var cardPickerButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
+    
+    @IBOutlet weak var cardImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +59,12 @@ class ViewController: UIViewController {
                 //restartText.isHidden = false
                 cardPickerButton.isHidden = true
                 restartButton.isHidden = false
+                cardImage.isHidden = true
             }
             else if allCards.contains(randomCard){
                 let index = allCards.firstIndex(of: randomCard)
                 allCards.remove(at: index!)
+                cardImage.image = UIImage(named: randomCard)
             }
         return randomCard
     }
@@ -79,5 +83,6 @@ class ViewController: UIViewController {
         //restartText.isHidden = true
         cardPickerButton.isHidden = false
         restartButton.isHidden = true
+        cardImage.isHidden = false
     }
 }
